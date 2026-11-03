@@ -1,0 +1,22 @@
+---
+title: "All About Athena"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# Athena's Website
+
+Hi there!
+
+Welcome to Athena Li's website where you can learn somethings about me. 
+
+To see my academic and professional experience, click [here](about.html)!
+
+This is my [GitHub](https://github.com/athenali990), my [LinkedIn](https://www.linkedin.com/in/athena-li-b2955a212/) and my [email](mailto:al4922@cumc.columbia.edu).
+
+If you want to see some cool plots, click [here](plots.html)
+
+

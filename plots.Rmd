@@ -1,0 +1,73 @@
+---
+title: "Cool Plots"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(flexdashboard)
+library(lubridate)
+```
+
+```{r}
+data("ny_noaa") #load dataset into environment
+noaa_df <- ny_noaa
+
+noaa_df = 
+  noaa_df |>
+#This creates separate variables for year, month and day and converts observations of temperature, precipitation and snowfall into more convenient scales (from mm or tenths of mm to cm and from tenths of degrees celsius to degrees celsius) 
+  mutate(date = ymd(date),        
+         year = year(date),
+         month = month(date, label = TRUE),
+         day = day(date),
+         tmax_1deg = as.numeric(tmax)/10, #1C = 10 tenths of degrees celsius
+         tmin_1deg = as.numeric(tmin)/10, #1C = 10 tenths of degrees celsius
+         prcp_cm = prcp/100, #1 cm = 100 tenths of mm
+         snow_cm = snow/10, #1 cm = 10 mm
+         snwd_cm = snwd/10 #1 cm = 10 mm 
+) |>
+  filter(id == "USC00300668",
+         !is.na(id)
+  )
+  
+```
+
+# Here are some great plots: 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+noaa_df |>
+  mutate(text_label = str_c("Max temp: ", tmax_1deg, " Min temp: ", tmin_1deg)) |> 
+  plot_ly(
+    x = ~tmax_1deg, y = ~tmin_1deg, type = "scatter", mode = "markers",
+    color = ~snow_cm, text = ~text_label, alpha = 0.5)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+noaa_df |> 
+  mutate(month = fct_reorder(as.factor(month), snow_cm)) |> 
+  plot_ly(y = ~snow_cm, color = ~month, type = "box", colors = "viridis")
+```
+
+### Chart C
+
+```{r}
+noaa_df |> 
+  mutate(year = as.factor(year)) |> 
+  count(year) |> 
+  plot_ly(x = ~year, y = ~n, color = ~year, type = "bar", colors = "viridis")
+```

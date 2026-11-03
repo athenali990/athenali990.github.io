@@ -37,7 +37,9 @@ noaa_df =
   
 ```
 
-# Here are some great plots: 
+To go back to index, click [here](index.html)
+
+# Here are some great plots:
 
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -62,7 +64,6 @@ noaa_df |>
   mutate(month = fct_reorder(as.factor(month), snow_cm)) |> 
   plot_ly(y = ~snow_cm, color = ~month, type = "box", colors = "viridis")
 ```
-
 ### Chart C
 
 ```{r}

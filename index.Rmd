@@ -1,5 +1,17 @@
 ---
 title: "All About Athena"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: about.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<al4922@cumc.columbia.edu>
+    - icon: fa-github fa-lg
+      href: https://github.com/athenali990/
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/athena-li-b2955a212/
 output: 
   html_document:
     toc: true

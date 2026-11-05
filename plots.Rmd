@@ -37,8 +37,6 @@ noaa_df =
   
 ```
 
-To go back to index, click [here](index.html)
-
 # Here are some great plots:
 
 Column {data-width=650}

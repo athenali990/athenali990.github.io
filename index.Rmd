@@ -23,12 +23,12 @@ output:
 
 Hi there!
 
-Welcome to Athena Li's website where you can learn somethings about me. 
+Welcome to Athena Li's website where you can learn some things about me. 
 
-To see my academic and professional experience, click [here](about.html)!
+To see my academic and professional experience, click [here](about.html)! Or, you can click "About" on the navbar.
 
-This is my [GitHub](https://github.com/athenali990), my [LinkedIn](https://www.linkedin.com/in/athena-li-b2955a212/) and my [email](mailto:al4922@cumc.columbia.edu).
+This is my [GitHub](https://github.com/athenali990), my [LinkedIn](https://www.linkedin.com/in/athena-li-b2955a212/) and my [email](mailto:al4922@cumc.columbia.edu). Alternatively, you can click on the corresponding icons in the navbar.
 
-If you want to see some cool plots, click [here](plots.html)
+If you want to see some cool plots, click [here](plots.html). 
 
 
